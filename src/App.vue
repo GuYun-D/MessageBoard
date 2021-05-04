@@ -3,7 +3,7 @@
     <Header></Header>
     <div class="container">
       <Add :addComment="addComment"></Add>
-      <List :coms="comments"></List>
+      <List :coms="comments" :deleteComment="deleteComment"></List>
     </div>
   </div>
 </template>
@@ -46,9 +46,13 @@ export default {
      * 数据在哪，操作数据的方法就在那
      */
     addComment(comment) {
-      console.log(comment);
+      // console.log(comment);
       this.comments.unshift(comment);
     },
+
+    deleteComment(index){
+      this.comments.splice(index, 1)
+    }
   },
 };
 </script>
